@@ -1,0 +1,187 @@
+body { 
+    font-family: 'Contrail One', monospace;
+    background: black;
+  }
+  
+  #nextbutton {
+    width: 100%;
+    height: 0%; /*comment and adjust the UI*/
+    pointer-events: auto;
+   
+  }
+  
+  .absolute-fill {
+    overflow:visible;
+    z-index: 10;
+    position:absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+  }
+  
+  #recenterButton {
+    position: absolute;
+    z-index: 5;
+    left: 2vh;
+    bottom: 2vh;
+    max-width: 50px;
+    pointer-events: auto;
+  }
+  
+  #noteInput {
+     opacity: 1;
+     position: absolute;
+     right:0;
+     max-height: 50vh;
+     overflow: hidden;
+     left: 0;
+     top: 0;
+     background: none; 
+     outline: none; 
+     border: none;
+     color: white;
+     text-shadow: 0 0px 2vmin black;
+     font-size: 15vmin;
+     padding:10vmin;
+    z-index: 5;
+    display:block;
+  }
+  
+  /*#submit-btn {
+     position: absolute;
+     top: 20%;
+     color: white;
+    z-index: 5;
+    display:block;
+  }*/
+  .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  #form-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display:block;
+  }
+  
+  #promptText {
+    font-size: 8vw;
+    text-align: center;
+  
+    color: white;
+    text-shadow: 2px 2px 8px purple;
+    
+    position: absolute;
+    width: 100%;
+    top: 12vh;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  
+  #promptText1 {
+    font-size: 8vw;
+    text-align: center;
+  
+    color: white;
+    text-shadow: 2px 2px 8px purple;
+    
+    position: absolute;
+    width: 100%;
+    top: 12vh;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  
+  #promptText2{
+    font-size: 8vw;
+    text-align: center;
+  
+    color: white;
+    text-shadow: 2px 2px 8px purple;
+    
+    position: absolute;
+    width: 100%;
+    top: 12vh;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  
+  #promptText3{
+    font-size: 8vw;
+    text-align: center;
+  
+    color: white;
+    text-shadow: 2px 2px 8px purple;
+    
+    position: absolute;
+    width: 100%;
+    top: 12vh;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  #promptText4{
+    font-size: 8vw;
+    text-align: center;
+  
+    color: white;
+    text-shadow: 2px 2px 8px purple;
+    
+    position: absolute;
+    width: 100%;
+    top: 12vh;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  
+  #promptText5{
+    font-size: 8vw;
+    text-align: center;
+  
+    color: white;
+    text-shadow: 2px 2px 8px purple;
+    
+    position: absolute;
+    width: 100%;
+    top: 12vh;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  
+  /* ANIMATIONS */
+  
+  .fly-in {animation: fly-in 1.5s ease-out both;}
+  @keyframes fly-in {
+    0%   {transform: translate(-100%, 0%);  opacity: 0;}
+    70%  {opacity: 1;}
+    100%  {transform: translate(-50%, 0%); opacity: 1;}
+  }
+  
+  .fly-out {animation: fly-out 1.5s ease-out both;}
+  @keyframes fly-out {
+    0%  {transform: translate(-50%, 0%); opacity: 1;}
+    70%  {opacity: 0;}
+    100%   {transform: translate(0%, 0%); opacity: 0;}
+  }
+  
+  .pulse-once { animation: pulse-once 0.2s cubic-bezier(0.785, 0.135, 0.150, 0.860) both; }
+  @keyframes pulse-once {
+    0% {transform: scale(1);}
+    50% {transform: scale(0.8);}
+    100% {transform: scale(1);}
+  }
+  
+  /*UI Code*/
+  
+  

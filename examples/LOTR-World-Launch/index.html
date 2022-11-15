@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Copyright (c) 2022 8th Wall, Inc. -->
+    <!-- head.html is optional; elements will be added to your html head before app.js is loaded. -->
+
+    <!-- Use "8thwall:" meta tags to hook into 8th Wall's build process and developer tools. -->
+    <meta name="8thwall:renderer" content="aframe:1.2.0">
+    <meta name="8thwall:package" content="@8thwall.xrextras">
+    <meta name="8thwall:package" content="@8thwall.landing-page">
+
+    <!-- Other external scripts and meta tags can also be added. -->
+    <!--<script crossorigin="anonymous" src="//cdn.8thwall.com/web/aframe/aframe-extras-6.1.1.min.js"></script>
+    <script src="https://unpkg.com/aframe-html-shader@0.2.0/dist/aframe-html-shader.min.js"></script>
+    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-fps-counter-component/dist/aframe-fps-counter-component.min.js"></script>-->
+
+
+    <script src="//cdn.8thwall.com/web/aframe/8frame-1.3.0.min.js"></script>
+
+    <!-- XR Extras - provides utilities like load screen, almost there, and error handling.
+         See github.com/8thwall/web/tree/master/xrextras -->
+    <script src="//cdn.8thwall.com/web/xrextras/xrextras.js"></script>
+
+    <!-- Landing Pages - see https://www.8thwall.com/docs/web/#landing-pages -->
+    <script src='//cdn.8thwall.com/web/landing-page/landing-page.js'></script>
+
+    <script src="index.js"></script>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Contrail+One&display=swap" rel="stylesheet">
+
+
+
+     <!-- 8thWall Web - Replace the app key here with your own app key -->
+     <script async src="//apps.8thwall.com/xrweb?appKey=cQKeIb2ffk9yrs3LF3B5X8MIDr9L1TTv8Noib9clJZfT5p6MkjMD8lq7QBmm3B6WjXrZyP"></script>
+
+    <script>
+    function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+        
+    } else {
+        x.style.display = "none";
+    }
+    }
+
+    function myFunction2() {
+    var z = document.getElementById("myDIV");
+    if (z.style.display === "none") {
+        z.style.display = "block";
+        
+    } else {
+        z.style.display = "none";
+    }
+    }
+
+    function nftpopup() {
+    var gift = document.getElementById("nftlogo");
+    let nft = document.getElementById('myDIV3')
+    let btn2 = document.getElementById('btn2')
+    let btn3 = document.getElementById('btn3')
+    let ringmove = document.getElementById("ringmove")
+    if (nft.style.display === "none" && btn2.style.display === "none" && btn3.style.display === "none" && ringmove.style.display === "none") {
+        
+        nft.style.display="block"
+        btn2.style.display="block"
+        btn3.style.display="block"
+        ringmove.style.display='block'
+        
+    } else {
+
+        nft.style.display="none"
+        btn2.style.display="none"
+        btn3.style.display="none"
+        ringmove.style.display='none'
+    }
+    }
+
+    /*function myFunction1() {
+    var a = document.getElementById("share");
+    if (a.style.display === "none") {
+        a.style.display = "block";
+        
+    } else {
+        a.style.display = "none";
+    }
+    
+    }*/
+    </script>
+</head>
+<body>
+    <div id="splashimage">
+        <div id="start">
+          <h2>Start Game</h2>
+        </div>
+      </div>
+      <div id="notap"  style="z-index: 10;"></div>
+      <div id="overlay" style="display: none; z-index: 20;" class="absolute-fill">
+       <span id="promptText"></span>
+       <span id="promptText1"></span>
+       <span id="promptText2"></span>
+       <span id="promptText3"></span>
+       <span id="promptText4"></span>
+      
+       <div id="nextbutton">
+          
+          <div>
+         <label for="fname" id="fname1" style="display:none;">Enter your name</label>
+         <input type="text" id="inputAnswer" style="display:none;">
+         <a href="#" class="button" id="submitButton" onClick="myFunction1()" style="display:none;">Submit</a>
+         <!--<a href="#" class="button1" id="playit" style="display:none;">Tap to play</a>-->
+       </div>
+      
+       <a href="#" id="btn" >Start Experience</a>
+      
+        <a href="#" id="btn1" style="display: none;">Start Your Journey</a>
+        
+       <div id="nw1">
+          <a href="https://www.cryenx.com/"><img id="l1" src="./assets/cl.png"></a>
+        <a href="https://cryenx.8thwall.app/lotr-family-and-friends"><img id="l11" src="./assets/refresh.png"></a>
+        <img id="nftlogo" src="./assets/nftlogo.png" style="display: none;" onClick="nftpopup()" >
+        <img id="l2" src="./assets/info.png" onClick="myFunction()" style="display: none;">
+        <!--<img id="l22" src="./assets/share.png">-->
+        <img id="l5" src="./assets/lotr.png"> 
+        <div id="myDIV" style="display: none;" onClick="myFunction2()">
+          <img id="clickme" src="./assets/steps.png" height="auto" width="500px">
+      </div>
+      <div id="myDIV2" >
+          <img id="clickme1" src="./assets/moveback.png" style="z-index: 100;">
+          
+      </div>
+      <img id="clickmeback" src="./assets/move.png" style="z-index: 100;">
+      
+      <!--NFT Popup-->
+      <div id="myDIV3" style="display: none;">
+          <img id="clickme2" src="./assets/nft.png" height="auto" width="350px">
+          
+      </div>
+      <img id="ringmove" src="./assets/ringmove.png" height="auto" width="100px" style="display: none; z-index: 1000">
+      <a href="#" onclick="javascript:window.location.reload();" id="btn2" style="display: none;">Start Over!</a>
+      <a href="https://bit.ly/m/The-One-Ring-NFT-Contest-by-Cryenx-Labs" id="btn3" style="display: none;">Join Contest</a>
+       </div>
+        </div>
+      
+        <h2 id="text12"></h2>
+        <h2 id="text22"></h2>
+        <h2 id="text33"></h2>
+        <h2 id="text44"></h2>
+        <h2 id="text55"></h2>
+      </div>
+      
+        
+      <a-scene
+      btn-click
+        lotr
+        physics
+        device-orientation-permission-ui
+        renderer="colorManagement: true;
+                  physicallyCorrectLights: true; 
+                  highRefreshRate: true; 
+                  alpha: true;"
+        responsive-immersive
+        landing-page="mediaSrc: #landing-page-video;"
+        xrextras-loading
+        xrextras-runtime-error
+        
+       
+        xrweb="disableDefaultEnvironment: true;">
+      
+        <xrextras-resource id="landing-page-video" src="./assets/moon-portal.mp4"></xrextras-resource>
+      
+        <!-- We can define assets here to be loaded while the load screen is displayed -->
+        <a-assets>
+          <!-- models -->
+          <a-asset-item id="portal-rim-model" src="./assets/models/portal2.glb"></a-asset-item>
+          <a-asset-item id="moon-model" src="./assets/models/canyon.glb"></a-asset-item>
+          <a-asset-item id="volcano-model" src="./assets/models/volcano2.glb"></a-asset-item>
+          <a-asset-item id="ring-model" src="./assets/models/ring.glb"></a-asset-item>
+          <a-asset-item id="fog-model" src="./assets/models/GroundMist.glb"></a-asset-item>
+          <img id="follow-img" src="./assets/textures/follow.png">
+          <img id="volcano-name-img" src="./assets/textures/volcano-name.png">
+          <!-- textures -->
+          <img id="posx" src="./assets/textures/cubemap/posx.jpg">
+          <img id="posy" src="./assets/textures/cubemap/posy.jpg">
+          <img id="posz" src="./assets/textures/cubemap/posz.jpg">
+          <img id="negx" src="./assets/textures/cubemap/negx.jpg">
+          <img id="negy" src="./assets/textures/cubemap/negy.jpg">
+          <img id="negz" src="./assets/textures/cubemap/negz.jpg">
+          <img id="blob-shad ow-img" src="./assets/textures/blob-shadow.png">
+           <canvas id="myCanvas"></canvas>
+          <video id="portal-video" muted autoplay playsinline crossorigin="anonymous" loop="true" src="./assets/textures/portal-video1.mp4"></video>
+        </a-assets>
+      
+        <xrextras-capture-button capture-mode="standard" ></xrextras-capture-button>
+        <xrextras-capture-config
+          watermark-image-url="./assets/cl.png"
+          watermark-max-width="100"
+          watermark-max-height="10"
+          file-name-prefix="cryenx-lotr"
+          request-mic="manual"
+        ></xrextras-capture-config>
+        <xrextras-capture-preview ></xrextras-capture-preview>
+      
+        <!-- Camera -->
+        <a-camera
+          
+          id="camera"
+          position="0 9 11">
+         
+        </a-camera>
+      
+        <!-- Hider walls -->
+        <xrextras-opaque-background remove="true">
+          <a-entity id="hider-walls">
+            <a-box scale="100 1 100" position="0 -1 49" xrextras-hider-material></a-box>
+            <a-box scale="100 100 1" position="0 50 75" xrextras-hider-material></a-box>
+            <a-box scale="100 1 100" position="0 100 49" xrextras-hider-material></a-box>
+            <a-box scale="1 100 100" position="-30 50 50" xrextras-hider-material></a-box>
+            <a-box scale="1 100 150" position="30 50 75" xrextras-hider-material></a-box>
+            <!--<a-box scale="1 500 500" position="0 50 110" xrextras-hider-material></a-box>-->
+            <a-ring id="portalHiderRing" radius-inner="0.001" radius-outer="100" position="0 7.5 -0.2" xrextras-hider-material></a-ring>
+            <a-ring id="portalHiderWall" radius-inner="4.5" radius-outer="100" position="0 7.5 -0.4" xrextras-hider-material></a-ring>
+          </a-entity>
+        
+           <a-entity id="portal-wall">
+            <a-circle radius="5.2" rotation="0 180 0" position="0 7.5 0" scale="0.8 0.8 0" xrextras-hider-material></a-circle>
+            <a-circle radius="5.2" rotation="0 180 0" position="0 7.5 0.25" scale="0.8 0.8 0" xrextras-hider-material></a-circle>
+          </a-entity>
+        </xrextras-opaque-background>
+      
+        
+        <!-- Lights -->
+        <a-light type="directional" intensity="3" position="-151.937 81.803 -90.651"></a-light>
+      
+        
+        <!-- Portal Contents -->
+        <a-entity id="portal-contents">
+          <a-entity
+            id="surface"
+            visible="false"
+            gltf-model="#moon-model"
+            rotation="0 87.522 0"
+           cubemap-static
+           env
+            position="-60 -10 -107"
+            scale=".1 .1  .1 "
+            shadow="receive: false">
+              <a-entity
+              id="volcano"
+              gltf-model="#volcano-model"
+              rotation="0 130.645 0"
+              cubemap-static
+              position="800 -2000 -6000.000"
+              scale="4500 4500 4500"
+              shadow="receive: false">
+                 <a-plane
+                  id="volcano-name"
+                    material="src: #volcano-name-img; transparent: true; roughness: 0.8; metalness: 0"
+                    rotation="0 -145 0"
+                    position="-0.200 0.692 -0.224"
+                    scale=".4 .4 .4"
+                    shadow="receive: false">
+                 </a-plane>
+                 </a-entity>
+                 <a-entity 
+                 id="volcano-flame"
+                  rotation="45 90 90" 
+                  scale="2 2 2" 
+                  position="741.926 512.753 -4500.000" 
+                  particle-system="preset: dust; color: #FF9D0D; positionSpread: 10 10 10;;size: 400; particleCount: 10; texture:https://cdn.glitch.global/b3cf4156-ca86-41de-b948-a8b74d2e37f2/lava4-removebg-preview.png?v=1664546719129;">
+                 </a-entity>
+                 <a-entity
+                  id="fog5"
+                  gltf-model="#fog-model"
+                  visible="true"
+                  rotation="0 45 0"
+                  position="434.928 80.000 -2269.781"
+                  scale="20 20 20">
+                </a-entity>
+                <a-entity
+                  id="fog6"
+                  gltf-model="#fog-model"
+                  visible="true"
+                  rotation="0 45 0"
+                  position="523.663 124.550 -1000"
+                  scale="20 20 20">
+                 </a-entity>
+                 <a-entity
+                  id="fog7"
+                  gltf-model="#fog-model"
+                  visible="true"
+                  rotation="0 45 0"
+                  position="389.979 80 -1312.293"
+                  scale="20 20 20">
+                </a-entity>
+                <a-entity
+                  id="fog8"
+                  gltf-model="#fog-model"
+                  visible="true"
+                  rotation="0 45 0"
+                  position="523.663 541.429 -1000"
+                  scale="20 20 20">
+                 </a-entity>
+                 <a-entity
+                  id="fog9"
+                  gltf-model="#fog-model"
+                  visible="true"
+                  rotation="0 45 0"
+                  position="389.979 352.036 -1379.452"
+                  scale="20 20 20">
+                </a-entity>
+                <a-entity
+                  id="fog10"
+                  gltf-model="#fog-model"
+                  visible="true"
+                  rotation="0 45 0"
+                  position="523.663 473.120 -1228.111"
+                  scale="20 20 20">
+                 </a-entity>
+                 <a-entity
+                  id="fog11"
+                  gltf-model="#fog-model"
+                  visible="true"
+                  rotation="152 -162.220 -32.700"
+                  position="126.406 352.036 -2057.096"
+                  scale="20 20 20">
+                </a-entity>
+             </a-entity>
+           
+           <a-sky color="#a3a3a3"></a-sky>
+      
+            <a-entity
+                id="ring"
+                score
+                visible="false"
+                  gltf-model="#ring-model"
+                  rotation="0 90 90"
+                  position="0 7 6"
+                  scale=".05 .05 .05"
+                  cubemap-static
+                  shadow="cast: false">
+                  <a-curvedimage
+                   id="name-label"
+                   visible="false"
+                  src="#myCanvas"
+                  radius="2"
+                  cubemap-static
+                  theta-length="180"
+                  theta-start="-130"
+                  rotation="90 0 -90"
+                  position="-6 2.135 0.5"
+                  scale="5 20 5"
+                  >        
+              </a-curvedimage>
+              <a-plane
+                id="followMe"
+                  material="src: #follow-img;shader:flat; transparent: true; roughness: 0.8; metalness: 0"
+                  rotation="-90 -90 0"
+                  position="15 0 0"
+                  scale="25 25 25"
+                  shadow="receive: false">
+                 </a-plane>
+            </a-entity>
+        </a-entity>
+      
+        <!-- Portal -->
+         <a-entity
+          id="portalRim"
+          visible="false"
+          gltf-model="#portal-rim-model"
+          spin="axis: x; speed: 14000"
+          color="#db540b"
+          cubemap-realtime
+          position="0 7.5 0"
+          rotation="90 -90 -90"
+          scale="0 0 0"
+          shadow="receive: false">
+        </a-entity>
+      
+        <a-entity
+          id="portalVideo"
+          auto-play-video="video: #portal-video"
+         material="shader: flat; src: #portal-video; blending: additive; transparent: true; side: front"
+          geometry="primitive: plane; height: 1; width: 1;"
+          position="-0.1 7.7 0.1"
+          scale="0 0 0">
+        </a-entity>
+      
+        <a-circle
+          id="portalShadow"
+          radius="0.5"
+          material="src: #blob-shadow-img; opacity: 0.65; roughness: 0.8; metalness: 0"
+          position="0 0.01 1.25"
+          rotation="-90 0 0"  
+          scale="0.001 0.001 0.001">
+        </a-circle>
+      
+      </a-scene>      
+</body>
+</html>
